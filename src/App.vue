@@ -1,19 +1,20 @@
 <template>
   <div class="main">
+    <h1>Vue Calendar</h1>
+    <h2>Date Picker - Range</h2>
     <div class="section">
-      <h2>Date Picker</h2>
-      <DatePicker
-          :date="targetDate"
-          auto-apply
-          @change-date="onChangeDate"
-      />
-    </div>
-    <div class="section">
-      <h2>Date Picker - Range</h2>
       <DatePicker
           :date="[startDate, endDate]"
           auto-apply
           range
+          @change-date="onChangeDate"
+      />
+    </div>
+    <h2>Date Picker - Target</h2>
+    <div class="section">
+      <DatePicker
+          :date="targetDate"
+          auto-apply
           @change-date="onChangeDate"
       />
     </div>
@@ -34,13 +35,16 @@ const onChangeDate = (event) => {
 }
 </script>
 <style scoped>
-h2 {
-  margin-bottom: 16px;
-}
+
 .section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 20%;
+  margin-bottom: 2em;
+  background-color: #1b1c1e;
+  border: 1px solid #7e7e7e;
+  border-radius: 8px;
+  padding: 16px;
+  width: 40%;
+  height: 380px;
 }
 </style>
